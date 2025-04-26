@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>JavaScript Programs</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background: lightgrey;
+      padding: 30px;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 30px;
+      color: #333;
+    }
+
+    .card {
+      background: darkkhaki;
+      padding: 20px;
+      margin-bottom: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      transition: transform 0.2s ease;
+    }
+
+    .card:hover {
+      transform: scale(1.02);
+    }
+
+    .card strong {
+      color: #007bff;
+    }
+
+    .card p {
+      margin: 10px 0 0;
+      font-size: 16px;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+  <h2>JavaScript Program Outputs</h2>
+
+  <div class="card" id="q1"></div>
+  <div class="card" id="q2"></div>
+  <div class="card" id="q3"></div>
+  <div class="card" id="q4"></div>
+  <div class="card" id="q5"></div>
+
+  <script>
+    // 1. Print name and address
+    let name = "Praveen Kishore";
+    let address = "Ramgama, Samastipur, Bihar, India";
+    document.getElementById("q1").innerHTML = `<strong>1. Name:</strong><p>${name}</p><strong>Address:</strong><p>${address}</p>`;
+
+    // 2. Check if value and data-type are same
+    let var1 = 100;
+    let var2 = "100";
+    let result2 = (var1 === var2);
+    document.getElementById("q2").innerHTML = `<strong>2. Are value and type same?</strong><p>${result2}</p>`;
+
+    // 3. Add two strings and return them in all caps
+    let str1 = "hello";
+    let str2 = "sir";
+    let result3 = (str1 + str2).toUpperCase();
+    document.getElementById("q3").innerHTML = `<strong>3. Combined string in uppercase:</strong><p>${result3}</p>`;
+
+    // 4. Convert string length to bytes
+    function getByteLength(str) {
+      return new TextEncoder().encode(str).length;
+    }
+    let inputStr = "Hello, world!";
+    let result4 = getByteLength(inputStr);
+    document.getElementById("q4").innerHTML = `<strong>4. Byte length of "${inputStr}":</strong><p>${result4} bytes</p>`;
+
+    // 5. Round a number to specific digits
+    function roundToDigits(num, digits) {
+      return Number(num.toFixed(digits));
+    }
+    let num = 3.14159265;
+    let digits = 3;
+    let result5 = roundToDigits(num, digits);
+    document.getElementById("q5").innerHTML = `<strong>5. Rounded number (to ${digits} digits):</strong><p>${result5}</p>`;
+  </script>
+</body>
+</html>
